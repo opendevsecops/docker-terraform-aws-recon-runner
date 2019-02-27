@@ -1,0 +1,20 @@
+echo LATEST=$LATEST
+echo DIFF=$DIFF
+echo BRANDS=$BRANDS
+echo DOMAINS=$DOMAINS
+echo URLS=$URLS
+
+set -x
+
+recon add --output-format=csv --node-type brand $BRANDS
+recon add --output-format=csv --node-type domain $DOMAINS
+recon add --output-format=csv --node-type url $URLS
+recon t --output-format=csv auto -s '*'
+recon s --output-format=csv -w current.network '*'
+
+aws s3 cp "$LATEST" latest.network
+aws s3 cp current.network "$LATEST"
+
+recon d --output-format=csv -w diff.network current.network latest.network
+
+aws s3 cp diff.network "$DIFF"
