@@ -25,4 +25,4 @@ ADD main.pown main.pown
 
 WORKDIR /session
 
-ENTRYPOINT ["time", "pown", "script", "/run/main.pown"]
+ENTRYPOINT ["pown", "script", "/run/main.pown"]
