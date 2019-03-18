@@ -1,8 +1,8 @@
-echo LAST=$LAST
-echo DIFF=$DIFF
-echo BRANDS=$BRANDS
-echo DOMAINS=$DOMAINS
-echo URLS=$URLS
+echo "LAST=$LAST"
+echo "DIFF=$DIFF"
+echo "BRANDS=$BRANDS"
+echo "DOMAINS=$DOMAINS"
+echo "URLS=$URLS"
 
 set -x
 
@@ -10,7 +10,11 @@ recon add --output-format=csv --node-type brand $BRANDS
 recon add --output-format=csv --node-type domain $DOMAINS
 recon add --output-format=csv --node-type url $URLS
 recon group --output-format=csv "Targets" '*'
-recon t auto --output-format=csv --auto-group -w curr.network -s '*'
+recon t auto --output-format=csv --auto-group -s 'node[type="brand"]'
+recon t auto --output-format=csv --auto-group -s 'node[type="domain"]'
+recon t auto --output-format=csv --auto-group -s 'node[type="ipv4"]'
+recon t auto --output-format=csv --auto-group -s 'node[type="ipv6"]'
+recon t nop -w curr.network -s '*'
 
 aws s3 cp "$LAST" last.network
 aws s3 cp curr.network "$LAST"
