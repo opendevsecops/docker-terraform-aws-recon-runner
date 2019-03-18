@@ -1,5 +1,7 @@
 FROM node:11-alpine
 
+RUN echo "Build 1"
+
 RUN true \
 	&& apk add \
 		--no-cache \
