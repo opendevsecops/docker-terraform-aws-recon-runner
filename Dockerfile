@@ -1,6 +1,6 @@
 FROM node:11-alpine
 
-RUN echo "Build 1"
+RUN echo "Build 2"
 
 RUN true \
 	&& apk add \
