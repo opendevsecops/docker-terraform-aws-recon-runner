@@ -77,7 +77,7 @@ recon save curr.network
 #
 
 aws s3 cp "$LAST" last.network
-aws s3 cp curr.network "$LAST
+aws s3 cp curr.network "$LAST"
 
 #
 #
