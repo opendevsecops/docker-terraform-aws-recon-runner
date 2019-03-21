@@ -1,5 +1,7 @@
+echo "CURR=$CURR"
 echo "LAST=$LAST"
 echo "DIFF=$DIFF"
+
 echo "BRANDS=$BRANDS"
 echo "DOMAINS=$DOMAINS"
 echo "URLS=$URLS"
@@ -78,6 +80,7 @@ recon save curr.network
 
 aws s3 cp "$LAST" last.network
 aws s3 cp curr.network "$LAST"
+aws s3 cp curr.network "$CURR"
 
 #
 #
