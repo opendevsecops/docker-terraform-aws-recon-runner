@@ -46,15 +46,15 @@ recon t auto --auto-group --auto-weight --name '*ports*' -v 'filter node[id="gro
 #
 #
 
-recon t builduri --auto-group --auto-weight --protocol http -v 'filter node[type="port"][label="80/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
-recon t builduri --auto-group --auto-weight --protocol https --port 443 -v 'filter node[type="port"][label="443/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
-recon t builduri --auto-group --auto-weight --protocol http --port 8080 -v 'filter node[type="port"][label="8080/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
-recon t builduri --auto-group --auto-weight --protocol http --port 9090 -v 'filter node[type="port"][label="9090/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
+recon t builduri --auto-group --auto-weight --protocol http -v 'filter node[type="port"][label="80/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
+recon t builduri --auto-group --auto-weight --protocol https --port 443 -v 'filter node[type="port"][label="443/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
+recon t builduri --auto-group --auto-weight --protocol http --port 8080 -v 'filter node[type="port"][label="8080/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
+recon t builduri --auto-group --auto-weight --protocol http --port 9090 -v 'filter node[type="port"][label="9090/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"]'
 
-recon t builduri --auto-group --auto-weight --protocol http -v 'filter node[type="port"][label="80/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
-recon t builduri --auto-group --auto-weight --protocol https --port 443 -v 'filter node[type="port"][label="443/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
-recon t builduri --auto-group --auto-weight --protocol http --port 8080 -v 'filter node[type="port"][label="8080/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
-recon t builduri --auto-group --auto-weight --protocol http --port 9090 -v 'filter node[type="port"][label="9090/tcp"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
+recon t builduri --auto-group --auto-weight --protocol http -v 'filter node[type="port"][label="80/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
+recon t builduri --auto-group --auto-weight --protocol https --port 443 -v 'filter node[type="port"][label="443/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
+recon t builduri --auto-group --auto-weight --protocol http --port 8080 -v 'filter node[type="port"][label="8080/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
+recon t builduri --auto-group --auto-weight --protocol http --port 9090 -v 'filter node[type="port"][label="9090/TCP"] | neighborhood node[type="ipv4"],node[type="ipv6"] | neighborhood node[type="domain"]'
 
 #
 #
