@@ -61,6 +61,7 @@ recon t builduri --auto-group --auto-weight --protocol http --port 9090 -v 'filt
 #
 
 recon t urlscanliveshot --auto-group --auto-weight -s 'node[type="uri"]'
+recon t urlscanliveshot --auto-group --auto-weight -e prettyUri -s 'node[type="whoarethey:account"]' 
 
 #
 #
