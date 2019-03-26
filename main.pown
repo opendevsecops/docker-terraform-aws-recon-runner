@@ -1,4 +1,3 @@
-echo "CURR=$CURR"
 echo "LAST=$LAST"
 echo "DIFF=$DIFF"
 
@@ -60,8 +59,13 @@ recon t builduri --auto-group --auto-weight --protocol http --port 9090 -v 'filt
 #
 #
 
-recon t urlscanliveshot --auto-group --auto-weight -s 'node[type="uri"]'
-recon t urlscanliveshot --auto-group --auto-weight -e prettyUri -s 'node[type="whoarethey:account"]' 
+recon t urlscanliveshot --group 'Screenshots' --auto-weight -s 'node[type="uri"]'
+
+#
+#
+#
+
+recon t urlscanliveshot --group 'WhoAreThey Screenshots' --auto-weight -e prettyUri -s 'node[type="whoarethey:account"]' 
 
 #
 #
@@ -81,7 +85,6 @@ recon save curr.network
 
 aws s3 cp "$LAST" last.network
 aws s3 cp curr.network "$LAST"
-aws s3 cp curr.network "$CURR"
 
 #
 #
